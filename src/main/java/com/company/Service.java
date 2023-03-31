@@ -38,7 +38,8 @@ public class Service {
         try {
             ids = getIds();
         } catch (IOException e) {
-            notificationBot.sendMessage("Exception : Bo'g'lanishda xatolik, vakansiyalarni olib bo'lmadi");
+            System.out.println(e.getMessage());
+            notificationBot.sendMessage("Exception : Bo'g'lanishda xatolik, vakansiyalarni olib bo'lmadi\n"+ Arrays.toString(e.getStackTrace()));
         }
 
         List<Vacancy> vacancies = getVacancies(ids);
@@ -180,7 +181,7 @@ public class Service {
                 vacancy.getEmail(),
                 "#" + (vacancy.getDistrict().contains(" ") ? vacancy.getDistrict().substring(0, vacancy.getDistrict().lastIndexOf(" ")) : vacancy.getDistrict()).replace("'", "").replace(" ", "") + " #" + (vacancy.getWorkType().equals("regular") ? "doimiy_ish" : "vaqtinchalik_ish"),
                 vacancy.getId(),
-                channelUsername, vacancy.getRegion()
+                channelUsername.substring(1), vacancy.getRegion()
         );
         return s;
     }

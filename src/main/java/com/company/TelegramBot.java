@@ -7,8 +7,8 @@ import org.telegram.telegrambots.meta.api.objects.Update;
 import org.telegram.telegrambots.meta.exceptions.TelegramApiException;
 
 public class TelegramBot extends TelegramWebhookBot {
-    private static final String botUsername="@Ishelonnnn_bot";
-    private static final String botToken="6059792859:AAGlYN6gXmgG_M0_jXGD3wvHZVMlcIRhIxw";
+    private static final String botUsername="@Fortestishmehnatbot.";
+    private static final String botToken="5905774032:AAHGvBEHJnn7WeL5rfCRp6ikyyRil3TRXTk";
     private final String channel;
 
     public TelegramBot(String channel) {
